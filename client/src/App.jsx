@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Login from './modules/Auth/Login';
 import Register from './modules/Auth/Register';
 import StudentDashboard from './modules/Student/StudentDashboard';
+import MentorDashboard from './modules/Mentor/MentorDashboard';
 import AnimatedBackground from './components/AnimatedBackground';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -52,6 +53,7 @@ function App() {
                 <Route path="/login" element={<PublicOnlyRoute><Login /></PublicOnlyRoute>} />
                 <Route path="/register" element={<PublicOnlyRoute><Register /></PublicOnlyRoute>} />
                 <Route path="/student/dashboard" element={<ProtectedRoute role="student"><StudentDashboard /></ProtectedRoute>} />
+                <Route path="/mentor/dashboard" element={<ProtectedRoute role="mentor"><MentorDashboard /></ProtectedRoute>} />
                 <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
                 <Route path="/" element={<Navigate to="/login" replace />} />
                 <Route path="*" element={<Navigate to="/dashboard" replace />} />

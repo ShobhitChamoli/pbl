@@ -14,6 +14,7 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/projects', require('./routes/projectRoutes'));
+app.use('/api/evaluations', require('./routes/evaluationRoutes'));
 
 app.get('/', (req, res) => {
     res.send('AuditX API is running');
