@@ -4,6 +4,7 @@ import AuthContext, { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Login from './modules/Auth/Login';
 import Register from './modules/Auth/Register';
+import StudentDashboard from './modules/Student/StudentDashboard';
 import AnimatedBackground from './components/AnimatedBackground';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -29,11 +30,12 @@ const Dashboard = () => {
   );
 };
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = ({ children, role }) => {
   const { user, loading } = useContext(AuthContext);
 
   if (loading) return <div className="min-h-screen flex items-center justify-center text-white">Loading...</div>;
   if (!user) return <Navigate to="/login" />;
+  if (role && user.role !== role) return <Navigate to="/dashboard" />;
 
   return children;
 };
@@ -49,6 +51,7 @@ function App() {
               <Routes>
                 <Route path="/login" element={<PublicOnlyRoute><Login /></PublicOnlyRoute>} />
                 <Route path="/register" element={<PublicOnlyRoute><Register /></PublicOnlyRoute>} />
+                <Route path="/student/dashboard" element={<ProtectedRoute role="student"><StudentDashboard /></ProtectedRoute>} />
                 <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
                 <Route path="/" element={<Navigate to="/login" replace />} />
                 <Route path="*" element={<Navigate to="/dashboard" replace />} />
