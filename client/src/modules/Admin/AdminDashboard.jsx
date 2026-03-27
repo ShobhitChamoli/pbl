@@ -203,7 +203,6 @@ const AdminDashboard = () => {
                     >
                         <AlertTriangle size={18} className="mr-2" /> Reset System
                     </Button>
-                    <Button variant="outline"><Settings size={18} /> Settings</Button>
                     <Button variant="secondary" onClick={handleLogout} className="text-red-500 hover:text-red-600 hover:bg-red-50"><LogOut size={18} /> Logout</Button>
                 </div>
             </div>
@@ -241,7 +240,6 @@ const AdminDashboard = () => {
                                 placeholder="Search courses or batches..."
                             />
                         </div>
-                        <Button variant="outline" className="h-10 px-3 text-xs">Filter</Button>
                     </div>
 
                     {/* Active Courses Table */}
@@ -268,9 +266,7 @@ const AdminDashboard = () => {
                                             <Badge variant="success">{course.status}</Badge>
                                         </td>
                                         <td className="px-4 py-3 text-right">
-                                            <button className="text-slate-400 hover:text-blue-600 transition-colors p-1">
-                                                ...
-                                            </button>
+                                            <div className="w-4"></div>
                                         </td>
                                     </tr>
                                 )) : (
@@ -284,8 +280,6 @@ const AdminDashboard = () => {
                         </table>
                     </div>
                     <div className="pt-4 mt-auto border-t border-slate-100 flex gap-3">
-                        <Button variant="outline" className="flex-1 text-xs justify-center"><Users size={14} className="mr-2" /> View Students</Button>
-                        <Button variant="outline" className="flex-1 text-xs justify-center"><UserCheck size={14} className="mr-2" /> Assign Faculty</Button>
                     </div>
                 </Card>
 
@@ -363,7 +357,6 @@ const AdminDashboard = () => {
                         <Button onClick={() => setIsEvalModalOpen(true)} className="justify-center text-xs h-10 bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-200"><Plus size={14} className="mr-2" /> Create Eval</Button>
                         <Button variant="outline" onClick={handleSendReminder} className="justify-center text-xs h-10">Send Reminder</Button>
                         <Button variant="outline" onClick={() => setIsExtendModalOpen(true)} className="justify-center text-xs h-10">Extend Time</Button>
-                        <Button variant="outline" className="justify-center text-xs h-10"><Download size={14} className="mr-2" /> Export Report</Button>
                     </div>
                 </Card>
             </div >

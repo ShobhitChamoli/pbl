@@ -499,29 +499,7 @@ const MentorDashboard = () => {
                                 </div>
                             </Card>
 
-                            {/* Start Viva Action */}
-                            {!selectedProject.evaluation && (
-                                <div className="relative">
-                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl opacity-[0.03] transform rotate-1 scale-[1.02]"></div>
-                                    <Card hover={false} className="relative overflow-hidden border-blue-100">
-                                        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                                            <div>
-                                                <h3 className="text-xl font-bold flex items-center gap-2 text-slate-800">
-                                                    <div className="bg-blue-100 p-2 rounded-lg text-blue-600"><Sparkles size={20} /></div>
-                                                    Ready to Evaluate?
-                                                </h3>
-                                                <p className="text-slate-500 mt-1">Start the interactive AI-assisted viva session.</p>
-                                            </div>
-                                            <Button
-                                                onClick={() => setVivaMode(true)}
-                                                className="w-full md:w-auto flex items-center justify-center gap-2 shadow-xl shadow-blue-200 bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-0 hover:from-blue-700 hover:to-indigo-700 px-8 py-3 text-lg"
-                                            >
-                                                <Play size={20} fill="currentColor" /> Start Live Viva
-                                            </Button>
-                                        </div>
-                                    </Card>
-                                </div>
-                            )}
+
 
                             {/* Evaluation Form (Visible if editing manually or already done) */}
                             <Card hover={false} className={`border-t-4 ${isEditing ? 'border-t-emerald-500 ring-4 ring-emerald-500/5' : 'border-t-slate-300'}`}>
